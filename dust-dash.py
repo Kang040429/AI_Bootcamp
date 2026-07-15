@@ -129,7 +129,7 @@ st.markdown("""
     <style>
     /* 1. 당겨서 새로고침(Pull-to-refresh) 강제 차단 및 스크롤 고정 해제 */
     html, body {
-        overscroll-behavior-y: contain !important; /* 당겨서 새로고침 차단 핵심 치트키 */
+        overscroll-behavior-y: contain !important;
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch !important;
     }
@@ -139,20 +139,25 @@ st.markdown("""
         -webkit-overflow-scrolling: touch !important;
     }
     
-    /* 2. 스트림릿 순정 배너 및 툴바 완전 박멸 (최신 버전 완벽 대응) */
+    /* 2. 스트림릿 배너 및 헤더 숨기되, 사이드바 버튼(화살표)은 유지 */
+    header {
+        background-color: transparent !important; /* 헤더 투명화 */
+    }
+    
+    /* 헤더 내부의 메뉴 버튼들은 숨기되, 사이드바 여는 버튼은 살려둡니다 */
+    div[data-testid="stToolbar"] {visibility: hidden;}
     #MainMenu {visibility: hidden;}
-    header {visibility: hidden;}
     footer {visibility: hidden;}
     
     /* 우측 하단 Hosted with Streamlit 구름 배너 완벽 제거 */
     div[class*="viewerBadge"] {display: none !important;}
     div[data-testid="stStatusWidget"] {visibility: hidden;}
-    .stAppDeployButton {display: none !important;} /* 배포 버튼도 함께 제거 */
+    .stAppDeployButton {display: none !important;}
     
-    /* 3. 모바일 화면 여백 쫀득하게 최적화 */
+    /* 3. 모바일 화면 여백 최적화 (사이드바 버튼 클릭 공간 확보) */
     .block-container {
-        padding-top: 1rem !important;
-        padding-bottom: 4rem !important; /* 아래 공간을 더 줘서 스크롤 끝까지 가도록 보장 */
+        padding-top: 2.5rem !important; /* 상단 여백을 살짝 주어 사이드바 화살표 클릭이 쉽게 만듭니다 */
+        padding-bottom: 4rem !important;
         padding-left: 1rem !important;
         padding-right: 1rem !important;
     }
