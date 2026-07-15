@@ -124,7 +124,7 @@ if auto_refresh:
 st.markdown("---")
 st.write("© 2024 숨쉬는 일상 Team. 이 화면은 외부 API를 호출하지 않는 데모 버전입니다.")
 
-'''
+/*
 st.markdown("""
     <style>
     /* 1. 당겨서 새로고침(Pull-to-refresh) 강제 차단 및 스크롤 고정 해제 */
@@ -164,7 +164,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-'''
+*/
 st.markdown("""
     <style>
     /* 1. 당겨서 새로고침(Pull-to-refresh) 강제 차단 및 스크롤 고정 해제 */
