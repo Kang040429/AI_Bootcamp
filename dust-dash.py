@@ -123,3 +123,24 @@ if auto_refresh:
 
 st.markdown("---")
 st.write("© 2024 숨쉬는 일상 Team. 이 화면은 외부 API를 호출하지 않는 데모 버전입니다.")
+
+
+
+st.markdown("""
+    <style>
+    /* 상단 툴바 완전히 숨기기 */
+    #MainMenu {visibility: hidden;}
+    header {visibility: hidden;}
+    footer {visibility: hidden;}
+    
+    /* 맨 아래 스트림릿 배너 강제 제거 */
+    .viewerBadge_container__1QSob {display: none !important;}
+    div[data-testid="stStatusWidget"] {visibility: hidden;}
+    
+    /* 모바일 여백 쫀득하게 붙이기 */
+    .block-container {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    </style>
+    """, unsafe_allow_html=True)
