@@ -120,7 +120,7 @@ with tab2:
 if auto_refresh:
     time.sleep(5)
     st.rerun()
-
+'''
 st.markdown("---")
 st.write("© 2024 숨쉬는 일상 Team. 이 화면은 외부 API를 호출하지 않는 데모 버전입니다.")
 
@@ -163,3 +163,4 @@ st.markdown("""
     }
     </style>
     """, unsafe_allow_html=True)
+'''
