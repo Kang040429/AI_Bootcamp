@@ -179,25 +179,32 @@ st.markdown("""
         -webkit-overflow-scrolling: touch !important;
     }
     
-    /* 2. 스트림릿 배너 및 헤더 디자인 숨김 */
+    /* 2. 스트림릿 배너 숨기기 및 헤더 투명화 */
     header {
-        background-color: transparent !important; /* 헤더 투명화 */
+        background-color: transparent !important;
     }
     
-    /* [★핵심] Fork 버튼, 깃허브 로고, 배포 버튼 영역 완벽 폭파 (이것만 추가됨) */
-    div[data-testid="stToolbarActions"] {
-        display: none !important;
+    /* Fork 버튼, 깃허브 로고, 점 3개 메뉴 숨기기 */
+    div[data-testid="stToolbarActions"] { display: none !important; }
+    #MainMenu { visibility: hidden !important; }
+    footer { visibility: hidden !important; }
+    div[class*="viewerBadge"] { display: none !important; }
+    div[data-testid="stStatusWidget"] { visibility: hidden !important; }
+    
+    /* [★핵심] 사이드바 여는 화살표(collapsedControl) 위치를 좌측 상단 구석으로 고정 */
+    div[data-testid="collapsedControl"] {
+        position: fixed !important;
+        top: 10px !important;
+        left: 10px !important;
+        z-index: 999999 !important;
+        background-color: rgba(17, 17, 17, 0.7) !important; /* 어두운 테마에 어울리는 반투명 배경 추가 */
+        border-radius: 8px !important;
+        padding: 4px !important;
     }
     
-    /* 나머지 얄미운 배너들도 함께 제거 */
-    #MainMenu {visibility: hidden;} /* 점3개 메뉴 */
-    footer {visibility: hidden;} /* 기본 하단 바 */
-    div[class*="viewerBadge"] {display: none !important;} /* Hosted with Streamlit 배너 */
-    div[data-testid="stStatusWidget"] {visibility: hidden;} /* 세션 상태 위젯 */
-    
-    /* 3. 모바일 화면 여백 최적화 (사이드바 버튼 클릭 공간 확보) */
+    /* 3. 본문 전체 영역을 화살표 아래로 안전하게 밀어내기 (겹침 차단) */
     .block-container {
-        padding-top: 2rem !important; /* 상단 여백 보장 */
+        padding-top: 4.5rem !important; /* 상단 여백을 충분히 주어 겹치지 않게 합니다 */
         padding-bottom: 4rem !important;
         padding-left: 1rem !important;
         padding-right: 1rem !important;
