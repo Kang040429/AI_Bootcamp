@@ -164,3 +164,43 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 '''
+
+st.markdown("""
+    <style>
+    /* 1. 당겨서 새로고침(Pull-to-refresh) 강제 차단 및 스크롤 고정 해제 */
+    html, body {
+        overscroll-behavior-y: contain !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    
+    [data-testid="stAppViewContainer"] {
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    
+    /* 2. 스트림릿 배너 및 헤더 디자인 숨김 */
+    header {
+        background-color: transparent !important; /* 헤더 투명화 */
+    }
+    
+    /* [★핵심] Fork 버튼, 깃허브 로고, 배포 버튼 영역 완벽 폭파 (이것만 추가됨) */
+    div[data-testid="stToolbarActions"] {
+        display: none !important;
+    }
+    
+    /* 나머지 얄미운 배너들도 함께 제거 */
+    #MainMenu {visibility: hidden;} /* 점3개 메뉴 */
+    footer {visibility: hidden;} /* 기본 하단 바 */
+    div[class*="viewerBadge"] {display: none !important;} /* Hosted with Streamlit 배너 */
+    div[data-testid="stStatusWidget"] {visibility: hidden;} /* 세션 상태 위젯 */
+    
+    /* 3. 모바일 화면 여백 최적화 (사이드바 버튼 클릭 공간 확보) */
+    .block-container {
+        padding-top: 2rem !important; /* 상단 여백 보장 */
+        padding-bottom: 4rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
