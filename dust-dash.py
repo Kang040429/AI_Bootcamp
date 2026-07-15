@@ -125,25 +125,32 @@ st.markdown("---")
 st.write("© 2024 숨쉬는 일상 Team. 이 화면은 외부 API를 호출하지 않는 데모 버전입니다.")
 
 
-
 st.markdown("""
     <style>
     /* 1. 모바일 화면에서 부드러운 스크롤 강제 활성화 */
     html, body, [data-testid="stAppViewContainer"] {
         overflow-y: auto !important;
+        overflow-x: hidden !important;
         -webkit-overflow-scrolling: touch !important;
+        height: 100% !important;
     }
     
-    /* 2. 상단 툴바 및 배너 숨기기 (더 깔끔한 앱 화면용) */
+    /* 2. 상단 툴바, 배너 및 WebIntoApp 툴바(dash) 강제 숨기기 */
     #MainMenu {visibility: hidden;}
     header {visibility: hidden;}
     footer {visibility: hidden;}
     .viewerBadge_container__1QSob {display: none !important;}
     div[data-testid="stStatusWidget"] {visibility: hidden;}
     
+    /* [★추가] WebIntoApp 상단 검은 띠(dash) 영역 제거 */
+    iframe, .app-toolbar, #toolbar, .toolbar {
+        display: none !important;
+        height: 0px !important;
+    }
+    
     /* 3. 모바일 화면 양옆 및 위아래 여백 최적화 */
     .block-container {
-        padding-top: 2rem !important;
+        padding-top: 1rem !important;
         padding-bottom: 3rem !important;
         padding-left: 1rem !important;
         padding-right: 1rem !important;
