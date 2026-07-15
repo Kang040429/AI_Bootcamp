@@ -124,47 +124,7 @@ if auto_refresh:
 st.markdown("---")
 st.write("© 2024 숨쉬는 일상 Team. 이 화면은 외부 API를 호출하지 않는 데모 버전입니다.")
 
-/*
-st.markdown("""
-    <style>
-    /* 1. 당겨서 새로고침(Pull-to-refresh) 강제 차단 및 스크롤 고정 해제 */
-    html, body {
-        overscroll-behavior-y: contain !important;
-        overflow-y: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-    }
-    
-    [data-testid="stAppViewContainer"] {
-        overflow-y: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-    }
-    
-    /* 2. 스트림릿 배너 및 헤더 숨기되, 사이드바 버튼(화살표)은 유지 */
-    header {
-        background-color: transparent !important; /* 헤더 투명화 */
-    }
-    
-    /* 헤더 내부의 메뉴 버튼들은 숨기되, 사이드바 여는 버튼은 살려둡니다 */
-    div[data-testid="stToolbar"] {visibility: hidden;}
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    
-    /* 우측 하단 Hosted with Streamlit 구름 배너 완벽 제거 */
-    div[class*="viewerBadge"] {display: none !important;}
-    div[data-testid="stStatusWidget"] {visibility: hidden;}
-    .stAppDeployButton {display: none !important;}
-    
-    /* 3. 모바일 화면 여백 최적화 (사이드바 버튼 클릭 공간 확보) */
-    .block-container {
-        padding-top: 2.5rem !important; /* 상단 여백을 살짝 주어 사이드바 화살표 클릭이 쉽게 만듭니다 */
-        padding-bottom: 4rem !important;
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-    }
-    </style>
-    """, unsafe_allow_html=True)
 
-*/
 st.markdown("""
     <style>
     /* 1. 당겨서 새로고침(Pull-to-refresh) 강제 차단 및 스크롤 고정 해제 */
