@@ -35,7 +35,7 @@ def get_realtime_air_quality(region=None):
         extracted_env_info = "미세먼지"  
         extracted_nouns = [] # 추가된 명사 저장 리스트
         search_target = ""
-        csv_path = r"data/경기도 행정구역현황.csv"
+        csv_path = r"경기도 행정구역현황.csv"
 
         # ----------------------------------------------------
         # 🔗 [PHASE 1] Gemini API: 유연한 키워드 및 명사 추출
