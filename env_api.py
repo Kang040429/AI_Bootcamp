@@ -69,7 +69,7 @@ def get_realtime_air_quality(region=None):
                     json={
                         "contents": [{"parts": [{"text": f"사용자 문장: {raw_text}"}]}],
                         "systemInstruction": {"parts": [{"text": system_instruction}]},
-                        "generationConfig": {"temperature": 0.0, "responseMimeType": "application/json"}
+                        "generationConfig": {"temperature": 0.2, "responseMimeType": "application/json"}
                     },
                     headers={"Content-Type": "application/json"}, timeout=10
                 )
