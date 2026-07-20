@@ -108,7 +108,7 @@ def get_realtime_air_quality(region=None):
         # ----------------------------------------------------
         if os.path.exists(csv_path) and extracted_location:
             try:
-                df = pd.read_csv(csv_path, encoding="cp949")
+                df = pd.read_csv(csv_path, encoding="utf-8")
                 df['시군구명'] = df['시군구명'].fillna('').astype(str).str.strip()
                 df['읍면동명'] = df['읍면동명'].fillna('').astype(str).str.strip()
 
